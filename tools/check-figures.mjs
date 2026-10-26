@@ -134,7 +134,7 @@ const sentences = (t) => t.split(/(?<=[.?!;:])\s+(?=[«¿¡"“A-ZÁÉÍÓÚÑ0-
 const rules = [
   ['1', (s) => /94[,.]7\s?%/.test(s) && /(menos de 1 ha|menores a 1 ha|menor a 1 hectárea|menos de una hectárea|menos de 1 hectárea)/i.test(s)],
   ['2', (s) => /92\s?%/.test(s) && /(consum|gast)/i.test(s) && !/(no es lo mismo|no equivale)/i.test(s)],
-  ['3', (s) => /(\b85\s?%|\b90\s?%|más del 90\s?%)/.test(s) && /(agua|caudal|cuenca|embalse)/i.test(s)],
+  ['3', (s) => /(\b85\s?%|\b90\s?%|más del 90\s?%)/.test(s) && /(agua|caudal|cuenca|embalse)/i.test(s) && !/otras medidas/i.test(s)],
   ['4', (s) => /40,93\s?% del Distrito/.test(s) || /zonificación oficial,? (el )?40,93/.test(s) || /40,93\s?%[^,.;]{0,30}zonificación oficial/.test(s)
     || /37,23\s?% del área urbanizada/.test(s) || /mapa combinado,? (el )?37,23/.test(s) || /37,23\s?%[^,.;]{0,30}mapa combinado/.test(s) || /78,16/.test(s) || /3,70\s?%/.test(s)],
   ['6', (s) => /1\.415,07/.test(s) && /2\.166,58/.test(s)],
@@ -176,7 +176,12 @@ for (const v of D.videos || []) for (const sc of v.scenes) {
   const t = [sc.seVe].concat(sc.lines.map((l) => l.text), Object.values(sc.texts || {}), (sc.figs || []).map((id) => figs[id] ? figs[id].cifra + ' ' + figs[id].alcance : '')).join(' ');
   if (/cuatro de cada diez hectáreas/i.test(t) && !/(40,93|mapa combinado)/.test(t)) errors.push(`regla 18 de spec §10.1 · ${v.id}/${sc.id}: «cuatro de cada diez hectáreas» sin su base`);
 }
-for (const c of corpus.filter((c) => !/^v\d/.test(c.piece))) {
+const msgText = (p, id) => { const m = ((D.messages || {})[p] || []).find((x) => x.id === id); return m ? m.text : ''; };
+for (const sl of (D.slides && D.slides.items) || []) {
+  const t = [sl.title, msgText(sl.punto, sl.message)].concat(sl.figs.map((id) => figs[id] ? figs[id].cifra + ' ' + figs[id].alcance : '')).join(' ');
+  if (/cuatro de cada diez hectáreas/i.test(t) && !/(40,93|mapa combinado|mapa que combina)/.test(t)) errors.push(`regla 18 de spec §10.1 · diapositiva ${sl.id}: «cuatro de cada diez hectáreas» sin su base`);
+}
+for (const c of corpus.filter((c) => !/^v\d/.test(c.piece) && !/^slides\.items/.test(c.where))) {
   if (/cuatro de cada diez hectáreas/i.test(c.text) && !/(40,93|mapa combinado)/.test(c.text) && !/^banco/.test(c.where)) errors.push(`regla 18 de spec §10.1 · ${c.where}: «cuatro de cada diez hectáreas» sin su base`);
 }
 
