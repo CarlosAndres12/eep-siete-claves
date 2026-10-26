@@ -1,0 +1,65 @@
+/* ESTILO «Enfoque metropolitano: verdes del territorio» · roles (espejo de js/style/tokens.js), leyenda, tipos. */
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans/static/DMSans-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans/static/DMSans-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans/static/DMSans-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dm-sans/DMSans-Italic[opsz,wght].ttf') format('truetype'); font-weight: 100 1000; font-style: italic; font-display: swap; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('../assets/fonts/ibm-plex-mono/IBMPlexMono-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('../assets/fonts/ibm-plex-mono/IBMPlexMono-Medium.ttf') format('truetype'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'IBM Plex Mono'; src: url('../assets/fonts/ibm-plex-mono/IBMPlexMono-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
+
+:root {
+  --ground: #F0EEEA;
+  --ground-2: #E6E3DB;
+  --ink: #1E4035;
+  --ink-soft: #4F574A;
+  --dark: #1E4035;
+  --on-dark: #D6FED0;
+  --accent-1: #94EC87;
+  --accent-2: #12ACB4;
+  --accent-3: #B7A2F1;
+  --accent-4: #EFE4B5;
+  --accent-5: #ED6E69;
+  --accent-6: #55B86D;
+  --accent-7: #357859;
+  --accent-8: #D6FED0;
+  --accent-9: #F9D886;
+  --skin-1: #F3C6A5;
+  --skin-2: #D9A080;
+  --skin-3: #C08A6A;
+  --skin-4: #8D5B43;
+  --skin-5: #5E3A2A;
+  --machine-ground: #163229;
+  --machine-line: #94EC87;
+  --machine-grid: #2E594A;
+  --machine-glow-1: #D6FED0;
+  --machine-glow-2: #B0E9FF;
+  --alert: #A8323A;
+
+  /* Leyenda núcleo (base §1.5), en el orden de ranuras del estilo */
+  --legend-1: #0072B2;
+  --legend-2: #D55E00;
+  --legend-3: #CC79A7;
+  --legend-4: #56B4E9;
+  --legend-5: #E69F00;
+
+  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "IBM Plex Mono", "Courier New", monospace;
+
+  --fs-body: 1.125rem;   /* 18 px */
+  --fs-small: 1rem;
+  --fs-h1: clamp(2.25rem, 4vw, 3.5rem);
+  --fs-h2: clamp(1.5rem, 2.4vw, 1.75rem);
+  --fs-h3: 1.25rem;
+  --lh-body: 1.5;
+  --measure: 68ch;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --radius-card: 9px;
+  --radius-bar: 4px;
+  --tap: 44px;
+}

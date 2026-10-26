@@ -1,0 +1,79 @@
+/* ESTILO · tratamiento de página (style S10): papel cálido, bandas de menta, títulos mono en mayúsculas. */
+body { background: #F0EEEA; }
+
+/* Foco: contorno ink de 3 px con un anillo on-dark de 2 px fuera, sobre fondos claros */
+:focus-visible { outline: 3px solid #1E4035; outline-offset: 0; box-shadow: 0 0 0 5px #D6FED0; }
+.on-dark :focus-visible, .site-header :focus-visible, .band-dark :focus-visible, .player-controls :focus-visible { outline: 3px solid #D6FED0; box-shadow: none; }
+
+.band-mint { background: #D6FED0; }
+.band-dark { background: #1E4035; color: #D6FED0; }
+.band-dark a, .band-dark h1, .band-dark h2, .band-dark h3 { color: #D6FED0; }
+
+.dek { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: 1.05rem; color: #4F574A; text-transform: none; letter-spacing: 0; margin-top: calc(-1 * var(--space-2)); }
+.eyebrow { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; font-size: 0.95rem; color: #357859; }
+
+/* Divisor: dos reglas finas en accent-6 hasta los bordes con un hueco central */
+.divider { display: flex; align-items: center; gap: var(--space-3); color: #4F574A; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.03em; margin: var(--space-5) 0 var(--space-4); }
+.divider::before, .divider::after { content: ''; flex: 1; border-top: 1px solid #55B86D; }
+.tilde-rule { color: #4F574A; letter-spacing: 0.1em; }
+
+/* Tarjeta: panel plano ground-2, esquinas de 9 px, contorno ink de 1,2 px */
+.card { background: #E6E3DB; border: 1.2px solid #1E4035; border-radius: 9px; }
+.card-mint { background: #D6FED0; }
+.label-bar { background: #1E4035; color: #D6FED0; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; border-radius: 4px; }
+.label-bar-light { background: #94EC87; color: #1E4035; }
+
+/* Insignias: chips redondos; tipo de evidencia en dark, estados con contorno ink, correcciones en alert */
+.badge { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; border-radius: 999px; }
+.badge-type { background: #1E4035; color: #D6FED0; }
+.badge-state { background: #F0EEEA; color: #1E4035; border: 1.6px solid #1E4035; }
+.badge-alert { background: #F0EEEA; color: #A8323A; border: 1.6px solid #A8323A; }
+
+/* Botón: píldora dark con la etiqueta mono en on-dark precedida de → */
+.btn { background: #1E4035; color: #D6FED0; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; border: 0; border-radius: 999px; }
+.btn:active { transform: translateY(1px); }
+.btn-outline { background: #F0EEEA; color: #1E4035; border: 2px solid #1E4035; }
+
+/* Sello: tarjeta etiqueta inclinada 3°, menta, contorno fino */
+.stamp { background: #D6FED0; border: 1.2px solid #1E4035; color: #1E4035; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; transform: rotate(-3deg); clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%, 0 14px); }
+
+/* Notas al margen: columna menta con el término resaltado en dark */
+.margin-note { background: #D6FED0; }
+.margin-note .term { background: #1E4035; color: #D6FED0; }
+
+/* Tablas: cabecera menta, reglas de 1 px ink solo entre filas y columnas */
+table.tabla { border-collapse: collapse; }
+table.tabla th { background: #D6FED0; color: #1E4035; font-weight: 700; text-align: left; }
+table.tabla th, table.tabla td { border-bottom: 1px solid #1E4035; }
+table.tabla th + th, table.tabla td + td { border-left: 1px solid #1E4035; }
+table.tabla caption { caption-side: top; text-align: center; font-weight: 700; }
+
+/* Corrección: el lado «No uses» */
+.alert-text { color: #A8323A; }
+.alert-border { border-color: #A8323A; }
+
+.site-header { background: #1E4035; color: #D6FED0; }
+.site-header a { color: #D6FED0; }
+.site-footer { background: #1E4035; color: #D6FED0; }
+.site-footer a { color: #D6FED0; }
+
+.chip-glos { background: #D6FED0; color: #1E4035; border: 1px solid #357859; border-radius: 999px; }
+.fig-inline { background: #E6E3DB; border: 1px solid #1E4035; border-radius: 4px; }
+
+.player-controls { background: #1E4035; color: #D6FED0; }
+.player-controls button, .player-controls select { background: transparent; color: #D6FED0; border: 1.5px solid #D6FED0; border-radius: 999px; }
+.player-controls button[aria-pressed="true"] { background: #D6FED0; color: #1E4035; }
+.scrubber { background: #2E594A; }
+.scrubber .fill { background: #94EC87; }
+.scrubber .tick { background: #D6FED0; }
+.scrubber .tick.chapter { background: #F9D886; }
+.overlay-card { background: #E6E3DB; border: 1.2px solid #1E4035; border-radius: 9px; }
+.overlay-wrap { background: rgba(30, 64, 53, 0.55); }
+.feedback-correct { color: #1E4035; }
+.feedback-correct .pill { background: #94EC87; }
+.feedback-retry .pill { background: #F0EEEA; border: 2px solid #1E4035; }
+
+@media print {
+  body, .band-mint, .band-dark, .site-header, .site-footer, .card { background: #fff !important; color: #000 !important; }
+  .badge-type { background: #fff; color: #000; border: 1.6px solid #000; }
+}
