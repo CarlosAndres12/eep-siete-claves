@@ -73,13 +73,18 @@
     var inner = w - pad * 2;
     var L = { pad: pad, rows: [], w: w };
     var y = pad;
-    L.top = y; y += 32 + (o.compact ? 10 : 14);
+    L.top = y;
+    var chipW = chip(ctx, f.escala, 0, 0, { measureOnly: true });
+    var badgeW = st.mark(ctx, 'badge', { x: 0, y: 0, h: 30 }, { text: f.tipo, variant: 'type', glyph: TYPE_GLYPH[f.tipo], size: 14, measureOnly: true });
+    L.badgeRow2 = chipW + badgeW + 10 > inner;
+    if (L.badgeRow2) { L.badgeY = y + 38; y += 38; }
+    y += 32 + (o.compact ? 10 : 14);
     var partes = (f.partes || []).slice();
     if (o.only != null) partes = [partes[o.only]];
     var head = partes[0];
     var headSize = o.maxHead || (o.compact ? 44 : 64);
     var hf;
-    while (headSize > 26) {
+    while (headSize > 18) {
       hf = st.font('body', headSize, 700);
       if (st.measure(ctx, head.valor, hf) <= inner) break;
       headSize -= 2;
@@ -94,9 +99,10 @@
       var vs = o.compact ? 20 : 24;
       var vf = st.font('body', vs, 700);
       var vw = st.measure(ctx, pt.valor, vf);
-      var rest = st.text(ctx, pt.etiqueta, { size: lblSize - 2, maxWidth: inner - Math.min(vw, inner * 0.5) - 10, measureOnly: true });
-      var rowH = Math.max(vs * 1.2, rest.height);
-      L.rows.push({ valor: pt.valor, vs: vs, vw: vw, label: rest.lines, ls: lblSize - 2, lh: rest.lineHeight, y: y + vs * 0.95 });
+      var below = vw > inner * 0.5;
+      var rest = st.text(ctx, pt.etiqueta, { size: lblSize - 2, maxWidth: below ? inner : inner - vw - 10, measureOnly: true });
+      var rowH = below ? vs * 1.15 + rest.height : Math.max(vs * 1.2, rest.height);
+      L.rows.push({ valor: pt.valor, vs: vs, vw: vw, below: below, label: rest.lines, ls: lblSize - 2, lh: rest.lineHeight, y: y + vs * 0.95 });
       y += rowH + 4;
     });
     var showScope = o.scope || f.estado === 'Con matiz';
@@ -142,7 +148,8 @@
       ctx.save();
       ctx.globalAlpha *= cA;
       chip(ctx, f.escala, x + L.pad, y + L.top);
-      st.mark(ctx, 'badge', { x: x + w - L.pad, y: y + L.top + 1, h: 30 }, { text: f.tipo, variant: 'type', glyph: TYPE_GLYPH[f.tipo], align: 'right', size: 14 });
+      if (L.badgeRow2) st.mark(ctx, 'badge', { x: x + L.pad, y: y + L.badgeY, h: 30 }, { text: f.tipo, variant: 'type', glyph: TYPE_GLYPH[f.tipo], size: 14 });
+      else st.mark(ctx, 'badge', { x: x + w - L.pad, y: y + L.top + 1, h: 30 }, { text: f.tipo, variant: 'type', glyph: TYPE_GLYPH[f.tipo], align: 'right', size: 14 });
       ctx.restore();
     }
     // La cifra aparece entera con p ≥ 0,6.
@@ -155,7 +162,8 @@
       L.rows.forEach(function (r) {
         st.text(ctx, r.valor, { x: x + L.pad, y: y + r.y, size: r.vs, weight: 700 });
         r.label.forEach(function (l, i) {
-          st.text(ctx, l, { x: x + L.pad + Math.min(r.vw, (w - 2 * L.pad) * 0.5) + 10, y: y + r.y - 2 + i * r.lh, size: r.ls });
+          if (r.below) st.text(ctx, l, { x: x + L.pad, y: y + r.y + r.vs * 0.95 + i * r.lh, size: r.ls });
+          else st.text(ctx, l, { x: x + L.pad + r.vw + 10, y: y + r.y - 2 + i * r.lh, size: r.ls });
         });
       });
       if (L.scope) {

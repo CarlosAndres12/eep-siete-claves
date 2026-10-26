@@ -49,6 +49,7 @@
       S.background(ctx, scene.type, { t: t, seed: E.hash(scene.id) % 997, columns: scene.data.columns, corner: scene.data.corner, plant: scene.data.plant });
       var zones = [];
       env.zones = zones;
+      S.ambient(ctx, scene.type, t, E.hash(scene.id) % 101, scene.data.zones || null);
       var drift = (scene.type === 'figure' || scene.type === 'compare') ? 0 : 1;
       if (drift && !S.reduced) {
         var k = 1 + 0.012 * E.ease.inOut(s.p);
@@ -58,10 +59,9 @@
       var f = mod.scenes && mod.scenes[scene.id];
       if (f) res = f(ctx, s, env) || null;
       ctx.restore();
-      S.ambient(ctx, scene.type, t, E.hash(scene.id) % 101, zones);
       // Insignias fijas de la escena
-      if (scene.data.ficcion) S.mark(ctx, 'badge', { x: W - 72, y: 132 }, { text: 'Personajes inventados', variant: 'state', glyph: 'g-personajes', align: 'right', size: 15, p: E.ease.clamp((t - scene.start) / 0.6) });
-      if (scene.data.ejemplo) S.mark(ctx, 'badge', { x: W - 72, y: 176 }, { text: 'Ejemplo ilustrativo', variant: 'state', glyph: 'g-ejemplo', align: 'right', size: 15 });
+      if (scene.data.ficcion) S.mark(ctx, 'badge', { x: W - 72, y: 22 }, { text: EEP.data.site.ui.personajes, variant: 'state', glyph: 'g-personajes', align: 'right', size: 15, p: E.ease.clamp((t - scene.start) / 0.6) });
+      if (scene.data.ejemplo) S.mark(ctx, 'badge', { x: W - 72, y: 66 }, { text: EEP.data.site.ui.ejemplo, variant: 'state', glyph: 'g-ejemplo', align: 'right', size: 15 });
       return { s: s, res: res };
     }
 
