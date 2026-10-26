@@ -1,0 +1,25 @@
+{
+  "note": "Alias de pronunciación (spec §5.4). Todos están «por confirmar de oído» con cada voz.",
+  "entries": [
+    { "term": "POT", "alias": "pe o te", "status": "por confirmar de oído" },
+    { "term": "EPM", "alias": "e pe eme", "status": "por confirmar de oído" },
+    { "term": "FAO", "alias": "fao", "status": "por confirmar de oído" },
+    { "term": "POMCA", "alias": "pómca", "status": "por confirmar de oído" },
+    { "term": "Landsat", "alias": "lánsat", "status": "por confirmar de oído" },
+    { "term": "Corine Land Cover", "alias": "corín land cáver", "status": "por confirmar de oído" },
+    { "term": "T-529", "alias": "te quinientos veintinueve", "status": "protege los dígitos del número de la sentencia" },
+    { "term": "Río Grande II", "alias": "Río Grande dos", "status": "numeral romano" },
+    { "term": "Corantioquia", "alias": "corantioquia", "status": "por confirmar de oído" },
+    { "term": "Di Bitetti", "alias": "di bitéti", "status": "por confirmar de oído" },
+    { "term": "Santa Elena", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "San Cristóbal", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "Altavista", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "San Antonio de Prado", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "San Sebastián de Palmitas", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "Girardota", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "Copacabana", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "Barbosa", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "Envigado", "alias": null, "status": "por confirmar de oído con el narrador es-MX" },
+    { "term": "Acuerdo 48 de 2014", "alias": null, "status": "el normalizador lee «cuarenta y ocho de dos mil catorce»; confirmar" }
+  ]
+}

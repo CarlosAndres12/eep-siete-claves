@@ -1,0 +1,55 @@
+{
+  "engine": "edge",
+  "engineNote": "edge: voces neuronales de Microsoft Edge (gratuitas, sin clave; usa el programa edge-tts). azure: Azure AI Speech F0 con AZURE_SPEECH_KEY y AZURE_SPEECH_REGION.",
+  "tier": "F0",
+  "region": "env:AZURE_SPEECH_REGION",
+  "key": "env:AZURE_SPEECH_KEY",
+  "outputFormat": "riff-24khz-16bit-mono-pcm",
+  "rateLimit": {
+    "requests": 18,
+    "perSeconds": 60,
+    "concurrency": 1
+  },
+  "edge": {
+    "concurrency": 4,
+    "retries": 4
+  },
+  "monthlyBudgetCharacters": 500000,
+  "warnAtShare": 0.8,
+  "loudness": {
+    "integratedLUFS": -16,
+    "truePeakDBTP": -1.5
+  },
+  "voices": {
+    "narrador": {
+      "name": "es-MX-JorgeNeural",
+      "locale": "es-MX",
+      "rate": "-4%",
+      "pitch": "+0%",
+      "wordsPerSecond": 2.43,
+      "alternatives": []
+    },
+    "lucia": {
+      "name": "es-CO-SalomeNeural",
+      "locale": "es-CO",
+      "rate": "+0%",
+      "pitch": "+0%",
+      "wordsPerSecond": 2.46,
+      "alternatives": [
+        "es-EC-AndreaNeural",
+        "es-MX-DaliaNeural"
+      ]
+    },
+    "hernan": {
+      "name": "es-CO-GonzaloNeural",
+      "locale": "es-CO",
+      "rate": "-6%",
+      "pitch": "-4%",
+      "wordsPerSecond": 2.63,
+      "alternatives": [
+        "es-PE-AlexNeural",
+        "es-MX-GerardoNeural"
+      ]
+    }
+  }
+}

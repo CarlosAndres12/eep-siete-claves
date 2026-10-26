@@ -1,0 +1,430 @@
+WEBVTT
+
+1
+00:00:00.600 --> 00:00:03.146
+¿Qué cubre el suelo de Medellín en cada lugar:
+
+2
+00:00:03.146 --> 00:00:06.562
+bosque, pastos, cultivos, agua o ciudad?
+
+3
+00:00:07.062 --> 00:00:10.456
+Según el estudio técnico de la Universidad de Antioquia
+
+4
+00:00:10.456 --> 00:00:12.996
+para el Distrito y el Área Metropolitana,
+
+5
+00:00:12.996 --> 00:00:16.081
+un mapa actualizado de esas coberturas alimenta
+
+6
+00:00:16.081 --> 00:00:18.798
+el diagnóstico de la estructura ecológica
+
+7
+00:00:18.798 --> 00:00:20.511
+y el análisis de riesgo.
+
+8
+00:00:22.311 --> 00:00:24.843
+A eso se le llama cobertura de la tierra:
+
+9
+00:00:24.843 --> 00:00:27.200
+lo que cubre la superficie en cada lugar.
+
+10
+00:00:27.550 --> 00:00:29.037
+<v Lucía>¿Y eso no está ya en
+
+11
+00:00:29.037 --> 00:00:30.513
+<v Lucía>los mapas oficiales?
+
+12
+00:00:30.863 --> 00:00:36.555
+Sí existen, y el estudio partió de ellos: su programa aprendió de un mapa oficial.
+
+13
+00:00:36.555 --> 00:00:37.911
+Según el estudio,
+
+14
+00:00:37.911 --> 00:00:42.755
+los satélites con aprendizaje automático son una alternativa de alta frecuencia
+
+15
+00:00:42.755 --> 00:00:45.121
+para seguir los cambios con poco rezago.
+
+16
+00:00:45.621 --> 00:00:47.323
+¿Y cómo aprende un programa
+
+17
+00:00:47.323 --> 00:00:48.750
+a reconocer un bosque?
+
+18
+00:00:50.550 --> 00:00:52.756
+El programa aprendió de ejemplos:
+
+19
+00:00:52.756 --> 00:00:57.445
+un mapa oficial de coberturas de 2021, que cubre la zona rural;
+
+20
+00:00:57.445 --> 00:01:02.737
+ortofotos, que son fotografías aéreas corregidas para que coincidan con un mapa,
+
+21
+00:01:02.737 --> 00:01:04.872
+e imágenes de satélite anuales.
+
+22
+00:01:05.372 --> 00:01:07.574
+Es una clasificación supervisada:
+
+23
+00:01:07.574 --> 00:01:10.385
+el programa estudia un mapa ya clasificado
+
+24
+00:01:10.385 --> 00:01:13.763
+y aprende a reconocer cada cobertura en imágenes nuevas.
+
+25
+00:01:15.563 --> 00:01:20.028
+Para aprender bien, usa al menos 100 muestras por cada tipo de cobertura,
+
+26
+00:01:20.028 --> 00:01:23.113
+separadas entre sí y tomadas lejos de los bordes.
+
+27
+00:01:23.463 --> 00:01:24.583
+<v Lucía>¿Por qué lejos
+
+28
+00:01:24.583 --> 00:01:25.679
+<v Lucía>de los bordes?
+
+29
+00:01:26.029 --> 00:01:28.552
+Porque en los bordes se mezclan coberturas,
+
+30
+00:01:28.552 --> 00:01:32.373
+y las muestras demasiado cercanas repiten la misma información:
+
+31
+00:01:32.373 --> 00:01:34.802
+el modelo memorizaría en lugar de aprender.
+
+32
+00:01:36.602 --> 00:01:40.403
+El clasificador reúne muchos árboles de decisión pequeños:
+
+33
+00:01:40.403 --> 00:01:44.043
+cada árbol nuevo se dedica a corregir los errores del anterior.
+
+34
+00:01:44.543 --> 00:01:47.578
+Y un programa de optimización prueba los ajustes
+
+35
+00:01:47.578 --> 00:01:50.502
+internos del clasificador de forma automática,
+
+36
+00:01:50.502 --> 00:01:52.754
+hasta encontrar los que mejor funcionan.
+
+37
+00:01:54.554 --> 00:01:56.636
+Entrenado con 2021,
+
+38
+00:01:56.636 --> 00:01:59.948
+el modelo se aplicó a imágenes de 2024
+
+39
+00:01:59.948 --> 00:02:02.934
+y produjo un mapa de coberturas de todo el Distrito.
+
+40
+00:02:03.284 --> 00:02:06.564
+<v Lucía>Pero el mapa de 2021 era solo de la zona rural.
+
+41
+00:02:06.564 --> 00:02:07.989
+<v Lucía>¿Cómo clasificó la ciudad?
+
+42
+00:02:08.339 --> 00:02:11.246
+El documento no describe cómo se clasificaron
+
+43
+00:02:11.246 --> 00:02:15.084
+ni se validaron las clases urbanas del mapa de 2024.
+
+44
+00:02:15.584 --> 00:02:16.603
+En resumen:
+
+45
+00:02:16.603 --> 00:02:18.391
+ejemplos bien elegidos,
+
+46
+00:02:18.391 --> 00:02:22.336
+árboles que corrigen los errores del anterior y un ajuste automático.
+
+47
+00:02:24.136 --> 00:02:29.081
+El resultado central es un mapa de coberturas del Distrito para 2024:
+
+48
+00:02:29.081 --> 00:02:32.171
+territorios artificializados, agrícolas,
+
+49
+00:02:32.171 --> 00:02:36.335
+bosques y áreas seminaturales, y zonas húmedas y cuerpos de agua.
+
+50
+00:02:36.835 --> 00:02:41.542
+El estudio lo presenta como insumo para el diagnóstico de la estructura ecológica
+
+51
+00:02:41.542 --> 00:02:43.683
+y de las áreas de amenaza y riesgo.
+
+52
+00:02:45.483 --> 00:02:50.330
+El estudio se fijó como meta una exactitud mínima del 85 %,
+
+53
+00:02:50.330 --> 00:02:53.341
+que debía comprobarse con una matriz de confusión:
+
+54
+00:02:53.341 --> 00:02:56.732
+una tabla que compara el mapa con lo verificado en la realidad.
+
+55
+00:02:57.232 --> 00:03:00.615
+Pero el documento todavía no reporta esa verificación:
+
+56
+00:03:00.615 --> 00:03:04.858
+ni la exactitud ni la matriz de confusión del mapa de 2024.
+
+57
+00:03:05.208 --> 00:03:07.049
+<v Lucía>Entonces el mapa acierta
+
+58
+00:03:07.049 --> 00:03:09.557
+<v Lucía>el 85 % de las veces.
+
+59
+00:03:09.907 --> 00:03:10.517
+No.
+
+60
+00:03:10.517 --> 00:03:15.731
+El 85 % es la meta que el estudio se fijó, no una exactitud medida.
+
+61
+00:03:23.531 --> 00:03:28.574
+El estudio advierte que estos mapas no deben presentarse como un resultado cerrado:
+
+62
+00:03:28.574 --> 00:03:31.737
+pide contrastarlos con imágenes aéreas recientes,
+
+63
+00:03:31.737 --> 00:03:35.813
+verificaciones en terreno y la cartografía oficial antes de decidir.
+
+64
+00:03:36.313 --> 00:03:37.163
+En breve:
+
+65
+00:03:37.163 --> 00:03:40.273
+un mapa hecho con inteligencia artificial apoya,
+
+66
+00:03:40.273 --> 00:03:42.954
+pero no reemplaza, el criterio técnico.
+
+67
+00:03:44.754 --> 00:03:45.749
+Con el mapa,
+
+68
+00:03:45.749 --> 00:03:49.017
+el estudio dedujo los usos actuales del suelo rural
+
+69
+00:03:49.017 --> 00:03:51.359
+y los comparó con lo que la norma permite.
+
+70
+00:03:51.859 --> 00:03:53.265
+Donde no coinciden,
+
+71
+00:03:53.265 --> 00:03:54.774
+hay un conflicto de uso.
+
+72
+00:03:56.574 --> 00:03:58.261
+En una primera estimación,
+
+73
+00:03:58.261 --> 00:04:05.037
+el estudio identificó 10.534,68 hectáreas rurales en conflicto con la norma;
+
+74
+00:04:05.037 --> 00:04:08.493
+el documento las refiere a años distintos según el pasaje.
+
+75
+00:04:08.843 --> 00:04:10.207
+<v Hernán>¿Conflicto quiere decir
+
+76
+00:04:10.207 --> 00:04:11.890
+<v Hernán>que la gente está haciendo algo ilegal?
+
+77
+00:04:12.240 --> 00:04:12.851
+No.
+
+78
+00:04:12.851 --> 00:04:16.425
+Es una diferencia entre el uso actual y lo que la norma permite;
+
+79
+00:04:16.425 --> 00:04:20.463
+no significa ilegalidad ni implica necesariamente daño ambiental.
+
+80
+00:04:22.263 --> 00:04:24.667
+Comparando mapas de distintos años,
+
+81
+00:04:24.667 --> 00:04:29.054
+el estudio observa recuperación de bosques en la estructura ecológica rural
+
+82
+00:04:29.054 --> 00:04:32.785
+y más presión sobre los corredores que conectan áreas naturales.
+
+83
+00:04:33.285 --> 00:04:35.909
+Para esos corredores no se dan cifras:
+
+84
+00:04:35.909 --> 00:04:38.944
+el documento compara capas de fuentes distintas
+
+85
+00:04:38.944 --> 00:04:41.213
+y reporta versiones que no coinciden.
+
+86
+00:04:43.013 --> 00:04:45.975
+Un criterio de Di Bitetti y colaboradores dice
+
+87
+00:04:45.975 --> 00:04:50.554
+que un hábitat funcional requiere un bosque continuo de al menos 50 hectáreas.
+
+88
+00:04:51.054 --> 00:04:53.473
+Con el mapa rural de 2021,
+
+89
+00:04:53.473 --> 00:04:58.862
+una lectura preliminar identificó seis bosques densos de ese tamaño o muy cercanos,
+
+90
+00:04:58.862 --> 00:05:00.852
+capaces de servir como hábitat.
+
+91
+00:05:01.352 --> 00:05:02.871
+Están en Santa Elena,
+
+92
+00:05:02.871 --> 00:05:05.846
+San Sebastián de Palmitas y San Antonio de Prado.
+
+93
+00:05:06.346 --> 00:05:08.420
+¿Y qué permitiría repetir este
+
+94
+00:05:08.420 --> 00:05:10.141
+mapeo cada cierto tiempo?
+
+95
+00:05:11.940 --> 00:05:16.427
+Repetir este mapeo permitiría vigilar los cambios con alertas tempranas:
+
+96
+00:05:16.427 --> 00:05:20.484
+avisos que se activan cuando las imágenes muestran cambios importantes.
+
+97
+00:05:20.984 --> 00:05:23.433
+El estudio recomienda, además,
+
+98
+00:05:23.433 --> 00:05:26.181
+un sistema de alertas de urbanización desde
+
+99
+00:05:26.181 --> 00:05:28.762
+el primer periodo del plan de ordenamiento
+
+100
+00:05:28.762 --> 00:05:29.682
+que se revisa.
+
+101
+00:05:30.182 --> 00:05:32.312
+Son recomendaciones del estudio,
+
+102
+00:05:32.312 --> 00:05:33.994
+no decisiones adoptadas.
+
+103
+00:05:35.794 --> 00:05:40.349
+Un mapa actualizado ayuda a entender cómo cambia el territorio y a cuidarlo;
+
+104
+00:05:40.349 --> 00:05:44.408
+es un insumo técnico, y el documento no reporta su exactitud.
+
+105
+00:05:44.908 --> 00:05:46.356
+Como dice el estudio:
+
+106
+00:05:46.356 --> 00:05:49.898
+la inteligencia artificial apoya la lectura del territorio,
+
+107
+00:05:49.898 --> 00:05:52.088
+pero no reemplaza el criterio técnico.
+

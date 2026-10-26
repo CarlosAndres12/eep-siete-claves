@@ -166,8 +166,8 @@
         var c = l.chunks[j];
         var end = j + 1 < l.chunks.length ? l.chunks[j + 1].start : l.dur + 0.25;
         if (rel >= c.start - 0.05 && rel < end) {
-          var fadeIn = Math.min(1, (rel - c.start + 0.05) / 0.15);
-          var fadeOut = Math.min(1, (end - rel) / 0.15);
+          var fadeIn = j === 0 ? Math.min(1, (rel - c.start + 0.05) / 0.15) : 1;
+          var fadeOut = j === l.chunks.length - 1 ? Math.min(1, (end - rel) / 0.15) : 1;
           return { line: l, chunk: c, index: j, alpha: Math.max(0, Math.min(fadeIn, fadeOut)) };
         }
       }
