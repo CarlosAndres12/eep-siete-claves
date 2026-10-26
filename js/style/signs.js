@@ -163,7 +163,7 @@
     'hoja-mapa': function (ctx, s, o) {
       var w = s * 1.1, h = s * 0.8;
       var x = -w / 2, y = -h;
-      ['accent-8', 'ground-2', 'accent-8'].forEach(function (r, i) {
+      ['accent-4', 'ground-2', 'accent-4'].forEach(function (r, i) {
         ctx.fillStyle = role(r);
         ctx.beginPath();
         ctx.moveTo(x + i * w / 3, y + (i % 2 ? s * 0.06 : 0));
@@ -171,6 +171,7 @@
         ctx.lineTo(x + (i + 1) * w / 3, y + h + (i % 2 ? 0 : -s * 0.06) + s * 0.06);
         ctx.lineTo(x + i * w / 3, y + h + (i % 2 ? -s * 0.06 : 0) + s * 0.06);
         ctx.closePath(); ctx.fill();
+        ctx.lineWidth = 1.2; ctx.strokeStyle = role('ink'); ctx.stroke();
       });
       S.stroke(ctx, [[x + w * 0.12, y + h * 0.75], [x + w * 0.35, y + h * 0.45], [x + w * 0.6, y + h * 0.6], [x + w * 0.85, y + h * 0.25]],
         { role: o.role || 'ink', width: 1.4, dash: [4, 4] });

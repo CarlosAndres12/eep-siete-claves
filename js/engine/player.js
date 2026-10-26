@@ -173,6 +173,7 @@
       var resumeAt = EEP.store.get('pos:' + id, 0);
       var posterT = posterTime();
       state.t = 0;
+      state.posterT = posterT;
       drawAt(posterT);
       buildPoster(resumeAt);
     }
@@ -223,7 +224,7 @@
         Array.prototype.forEach.call(chapBar.children, function (b, i) { b.setAttribute('aria-current', i === ci ? 'true' : 'false'); });
       }
     }
-    function draw() { drawAt(state.t); }
+    function draw() { drawAt(!poster.hidden && state.posterT != null ? state.posterT : state.t); }
 
     // ---------- reproducción ----------
     function play() {

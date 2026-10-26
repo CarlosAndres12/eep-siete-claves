@@ -1,0 +1,22 @@
+/* Impresión (base §6, style S10, spec §9.3): carta, blanco y negro; signos, tramas y etiquetas llevan el sentido.
+   Se ocultan videos, navegación y juegos; quedan fichas, cifras con su fuente, glosario, precauciones y transcripciones. */
+@page { size: letter; margin: 16mm 14mm; }
+body { font-size: 11pt; }
+.site-header, .site-nav, .skip-link, .hero, .player-stage, .player-controls, .player-chapters, .player-download, .widget,
+.clase-controls, .clase-stage, .slide-counter, .punto-nav, .more-links, .filters, .filter-count, .tabs, .chapter-links, .nav-toggle { display: none !important; }
+.site-footer { border-top: 1px solid; }
+.container { max-width: none; padding: 0; }
+h1 { font-size: 22pt; }
+h2 { font-size: 14pt; page-break-after: avoid; }
+.fig-card, .card { border: 1px solid; border-radius: 0; page-break-inside: avoid; }
+.fig-grid { display: block; }
+.fig-grid .fig-card { margin-bottom: 6mm; }
+details { display: block; }
+details > summary { list-style: none; font-weight: 700; }
+details:not([open]) > *:not(summary) { display: block; }
+.player-transcript, .player-figs { border: 0; padding: 0; }
+.legend-swatch { border-width: 2px; }
+.badge { border: 1px solid; }
+.tilde-rule { letter-spacing: 0.1em; }
+a { text-decoration: none; }
+.gloss-entry, .message, table.tabla tr { page-break-inside: avoid; }
