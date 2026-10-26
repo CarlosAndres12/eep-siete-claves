@@ -23,6 +23,13 @@
 .hero-canvas { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; max-height: 62vh; object-fit: cover; }
 
 .route-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-4); }
+.route-card { display: flex; flex-direction: column; }
+.route-card .btn { margin-top: auto; align-self: flex-start; }
+.route-head { display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-3); }
+.route-head .icon-canvas { flex: none; }
+.route-head .eyebrow { margin: 0; }
+.route-head h3 { margin: var(--space-1) 0 0; }
+.route-len { margin-bottom: var(--space-3); }
 .fig-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-4); align-items: start; }
 .fig-grid-2 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 
